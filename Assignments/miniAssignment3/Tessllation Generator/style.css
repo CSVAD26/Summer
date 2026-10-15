@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  background: #f4f4f4;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+canvas {
+  display: block;
+  border: 1px solid #ddd;
+}
+
+#stage {
+  position: relative;
+}
+
+/* controls sit over the empty band between the line editor and the preview */
+#controls {
+  position: absolute;
+  top: 580px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+button {
+  padding: 8px 22px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  background: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+  color: #fff;
+}
+
+#mode-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-left: 8px;
+}
