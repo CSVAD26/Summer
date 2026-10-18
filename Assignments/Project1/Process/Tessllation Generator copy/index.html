@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Freehand to Tessellation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+</head>
+<body>
+  <main>
+    <h1>FREEHAND TO TESSELLATION</h1>
+    <div id="canvas-holder"></div>
+    <!-- one column under each canvas panel -->
+    <div id="controls">
+      <div>
+        <button id="clear-btn">CLEAR</button>
+        <button id="generate-btn">GENERATE</button>
+        <div id="geometry">
+          <button id="tri-btn">TRIANGLE</button>
+          <button id="sq-btn" class="active">SQUARE</button>
+        </div>
+        <p id="status"></p>
+      </div>
+      <div>
+        <button id="refine-btn" disabled>REFINE</button>
+        <p class="hint">Drag a point to reshape · click a curve to add a point · select + Delete to remove</p>
+      </div>
+      <div id="palettes"></div>
+    </div>
+  </main>
+  <script src="sketch.js"></script>
+</body>
+</html>

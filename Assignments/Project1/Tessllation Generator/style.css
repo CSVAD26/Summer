@@ -1,0 +1,297 @@
+body {
+  margin: 0;
+  background: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 106px 0 16px;
+}
+
+h1 {
+  width: 1160px;
+  margin: 0 0 4px;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+canvas {
+  display: block;
+}
+
+/* columns line up with the canvas panels: 340 / 340 / 440, 20px gutters */
+#controls {
+  width: 1160px;
+  display: grid;
+  grid-template-columns: 340px 340px 440px;
+  gap: 20px;
+  align-items: start;
+}
+
+button {
+  padding: 8px 22px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background: #fff;
+  border: 1px solid #111;
+  cursor: pointer;
+}
+
+button:hover:enabled {
+  background: #111;
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* detail tools under REFINE */
+#tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+button.tool {
+  display: flex;
+  padding: 5px 8px;
+}
+
+button.tool:hover:enabled {
+  background: #eee;
+  color: #111;
+}
+
+button.tool.active,
+button.tool.active:hover {
+  background: #111;
+  color: #fff;
+}
+
+#size-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+#size-slider {
+  width: 80px;
+  accent-color: #111;
+}
+
+#size-value {
+  width: 14px;
+}
+
+#status,
+.hint {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #777;
+}
+
+/* six palettes in a 3 x 2 grid */
+#palettes {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 8px 12px;
+}
+
+button.palette {
+  display: flex;
+  padding: 3px;
+  border: 1px solid #ccc;
+}
+
+button.palette:hover {
+  background: #fff;
+  border-color: #111;
+}
+
+button.palette.active {
+  border-color: #111;
+  outline: 1px solid #111;
+}
+
+.swatch {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+}
+
+/* expand icon in the 03 / TESSELLATION heading row (canvas is 1200px wide,
+   the panel's right edge is 20px from it) */
+#canvas-holder {
+  position: relative;
+}
+
+#fullscreen-btn,
+#fullscreen-download,
+#fullscreen-close {
+  display: flex;
+  padding: 4px;
+  border: 1px solid transparent;
+  background: #fff;
+  color: #111;
+}
+
+#fullscreen-btn {
+  position: absolute;
+  top: 9px;
+  right: 20px;
+}
+
+#fullscreen-btn:hover:enabled,
+#fullscreen-download:hover,
+#fullscreen-close:hover {
+  background: #fff;
+  color: #111;
+  border-color: #111;
+}
+
+/* fullscreen view: only the tessellation and a small close icon */
+#fullscreen-view {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: #fff;
+  overflow: hidden;
+}
+
+#fullscreen-view[hidden] {
+  display: none;
+}
+
+/* top-right: [download] [close] */
+#fullscreen-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+#fullscreen-download,
+#fullscreen-close {
+  border-color: #111;
+}
+
+/* palettes + outline controls side by side under the 03 panel */
+#tess-controls {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+#outline-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.outline-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ctrl-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+button.outline-opt {
+  padding: 3px 4px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+button.outline-opt:hover:enabled {
+  background: #eee;
+  color: #111;
+}
+
+button.outline-opt.active,
+button.outline-opt.active:hover {
+  background: #111;
+  color: #fff;
+}
+
+#outline-slider {
+  width: 60px;
+  accent-color: #111;
+}
+
+/* fullscreen DENSITY slider, bottom centre */
+#density-control {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #111;
+}
+
+.density-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #111;
+}
+
+#density-slider {
+  width: 140px;
+  accent-color: #111;
+}
+
+/* default-density snap point: tick at the track centre, "1x" below it */
+.density-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#density-reset {
+  position: relative;
+  padding: 5px 4px 0;
+  border: none;
+  background: transparent;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  color: #555;
+  line-height: 1;
+}
+
+#density-reset::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 1px;
+  height: 6px;
+  background: #111;
+}
+
+#density-reset:hover:enabled {
+  background: transparent;
+  color: #111;
+  text-decoration: underline;
+}
