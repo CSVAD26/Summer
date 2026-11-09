@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOODMAPS</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="title">
+    <h1>FOODMAPS</h1>
+    <p>An Atlas of What I've Tasted</p>
+  </header>
+
+  <nav class="modes" aria-label="Display mode">
+    <button type="button" data-mode="minimal" class="on" aria-pressed="true">01 Minimal</button>
+    <button type="button" data-mode="collage" aria-pressed="false">02 Culinary Collage</button>
+  </nav>
+
+  <main id="stage" aria-label="Interactive globe. Drag to rotate. Click a dot to see its photo and local map."></main>
+
+  <section id="local" class="local" hidden aria-label="Local view">
+    <header class="local-head">
+      <div>
+        <h2>LOCAL VIEW</h2>
+        <p class="local-place"></p>
+        <p class="local-sub"><span class="local-radius"></span> · <span class="local-count"></span></p>
+      </div>
+      <div class="local-tools">
+        <button type="button" class="zout" aria-label="Zoom out (larger radius)">&minus;</button>
+        <button type="button" class="zin" aria-label="Zoom in (smaller radius)">+</button>
+        <button type="button" class="close" aria-label="Close local view">&times;</button>
+      </div>
+    </header>
+    <div class="local-map"></div>
+  </section>
+
+  <ul id="legend" class="legend" aria-label="Food categories"></ul>
+  <p class="hint">Press Space to align north ↑</p>
+
+  <aside id="panel" class="panel" hidden aria-live="polite">
+    <button class="close" type="button" aria-label="Close">&times;</button>
+    <figure class="photo">
+      <img id="photo-img" alt="">
+      <div class="noimg" hidden>Image unavailable</div>
+    </figure>
+    <dl class="meta">
+      <dt>Place</dt><dd class="place"></dd>
+      <dt>Date</dt><dd class="date"></dd>
+      <dt>Category</dt><dd class="category"></dd>
+    </dl>
+  </aside>
+
+  <div id="status" class="status" hidden></div>
+
+  <script src="lib/p5.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

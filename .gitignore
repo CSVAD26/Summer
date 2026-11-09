@@ -1,1 +1,12 @@
 .DS_Store
+
+# Project 2 FoodMaps: private photos, GPS data, collage textures, caches (second layer;
+# the main rules live in Assignments/Project2/FoodMaps/.gitignore)
+Assignments/Project2/FoodMaps/data/
+Assignments/Project2/FoodMaps/output/
+Assignments/Project2/FoodMaps/.cache/
+Assignments/Project2/FoodMaps/.venv/
+Assignments/Project2/FoodMaps/public/images/
+Assignments/Project2/FoodMaps/public/collage/
+Assignments/Project2/FoodMaps/public/demo/
+Assignments/Project2/FoodMaps/public/geo/tiles/

@@ -1,0 +1,8 @@
+osxphotos>=0.70
+Pillow>=10.0
+pillow-heif>=0.16
+imagehash>=4.3
+pyobjc-framework-Vision>=10.0
+pyobjc-framework-Quartz>=10.0
+pyogrio>=0.9
+shapely>=2.0
